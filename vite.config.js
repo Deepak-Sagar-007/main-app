@@ -25,7 +25,7 @@ export default defineConfig({
     federation({
       remotes: {
         // Replace with your actual deployed URL on Netlify when you're ready
-        music_library: 'https://your-music-library.netlify.app/assets/remoteEntry.js',
+        music_library: 'https://https://thunderous-faloodeh-2a1a16.netlify.app//assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom'],
     }),
