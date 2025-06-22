@@ -1,3 +1,20 @@
+// import { defineConfig } from 'vite';
+// import react from '@vitejs/plugin-react';
+// import federation from '@originjs/vite-plugin-federation';
+
+// export default defineConfig({
+//   plugins: [
+//     react(),
+//     federation({
+//       remotes: {
+  
+//         music_library: 'http://localhost:3000/assets/remoteEntry.js',
+//       },
+//       shared: ['react', 'react-dom'],
+//     }),
+//   ],
+// });
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
@@ -7,10 +24,15 @@ export default defineConfig({
     react(),
     federation({
       remotes: {
-        // Replace the URL with the actual one if deployed or being served
-        music_library: 'http://localhost:3000/assets/remoteEntry.js',
+        // Replace with your actual deployed URL on Netlify when you're ready
+        music_library: 'https://your-music-library.netlify.app/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom'],
     }),
   ],
+  build: {
+    target: 'esnext',        
+    minify: false,           
+    cssCodeSplit: false     
+  },
 });
